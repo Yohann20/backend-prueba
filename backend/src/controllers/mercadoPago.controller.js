@@ -108,8 +108,10 @@ async function refreshToken(req, res) {
 }
 async function generarUrlOnBoarding(req, res) { 
     try {
-        const { idMicroempresa } = req.params;
+        const { idMicroempresa } = req.body; 
+        
         if (!idMicroempresa) return respondError(res, 400, "No se ha proporcionado el id de la microempresa.");
+        console.log("MP: Controller GenerarUrl", idMicroempresa);
         const [url, error] = await MercadoPagoServices.generarUrlOnBoarding(idMicroempresa);
         if (error) {
             return respondError(res, 400, error);

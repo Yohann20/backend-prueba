@@ -11,7 +11,7 @@ router.delete("/deleteMercadoPagoAcc/:id", mercadoPagoController.deleteMercadoPa
 router.get("/getMercadoPagoAccs", mercadoPagoController.getMercadoPagoAccs);
 
 // Mercado Pago Routes
-router.post("/generar-url/:id", mercadoPagoController.generarUrlOnBoarding); 
+router.post("/generar-url", mercadoPagoController.generarUrlOnBoarding); 
 router.get("/callback", mercadoPagoController.onBoarding);  
 router.post("/refreshtoken/:id", mercadoPagoController.refreshToken); 
 
